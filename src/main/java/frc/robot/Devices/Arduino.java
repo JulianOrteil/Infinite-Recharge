@@ -1,8 +1,9 @@
 package frc.robot.Devices;
 
 import edu.wpi.first.wpilibj.I2C;
+
 /**
- * Arduino
+ * Manages the Arduino on the Java side
  */
 public class Arduino {
 

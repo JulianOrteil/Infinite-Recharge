@@ -6,6 +6,8 @@ import edu.wpi.first.wpilibj.DigitalInput;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.SpeedControllerGroup;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import frc.robot.Devices.Arduino;
+import frc.robot.Devices.ColorSensor;
 
 /**
  * RobotMap
@@ -29,6 +31,12 @@ public class RobotMap {
     // Limit switches
     public DigitalInput rackAndPinionLowerSwitch, rackAndPinionUpperSwitch, rackAndPinionReadySwitch;
     public DigitalInput spinnerReadySwitchLeft, spinnerReadySwitchRight;
+
+    // Arduino
+    public Arduino arduino;
+
+    // ColorSensor
+    public ColorSensor colorSensor;
 
     public RobotMap() {
 
@@ -71,6 +79,9 @@ public class RobotMap {
         this.spinnerReadySwitchLeft = new DigitalInput(this.SPINNER_READY_SWITCH_LEFT);
         this.spinnerReadySwitchRight = new DigitalInput(this.SPINNER_READY_SWITCH_RIGHT);
 
+        this.arduino = new Arduino();
+
+        this.colorSensor = new ColorSensor();
     }
 
 }

@@ -8,6 +8,13 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
+import edu.wpi.first.wpilibj.XboxController;
+import frc.robot.Devices.Xbox;
+import frc.robot.Subsystems.Autonomous;
+import frc.robot.Subsystems.CameraServer_;
+import frc.robot.Subsystems.Intake;
+import frc.robot.Subsystems.RobotMap;
+import frc.robot.Subsystems.Spinner;
 
 /**
  * The VM is configured to automatically run this class, and to call the
@@ -17,12 +24,32 @@ import edu.wpi.first.wpilibj.TimedRobot;
  * project.
  */
 public class Robot extends TimedRobot {
+
+  private int CONTROLLER_ID;
+  
+  private RobotMap robotMap;
+  private Autonomous autonomous;
+  private CameraServer_ cameraServer;
+  private Intake intake;
+  private Spinner spinner;
+  private Xbox controller;
+
   /**
    * This function is run when the robot is first started up and should be used
    * for any initialization code.
    */
   @Override
   public void robotInit() {
+
+    this.CONTROLLER_ID = 0;
+
+    this.robotMap = new RobotMap();
+    this.autonomous = new Autonomous();
+    this.cameraServer = new CameraServer_();
+    this.intake = new Intake(this.robotMap.intake, this.robotMap.door, this.robotMap.arduino);
+    this.spinner = new Spinner();
+    this.controller = new Xbox(this.CONTROLLER_ID);
+
   }
 
   @Override
