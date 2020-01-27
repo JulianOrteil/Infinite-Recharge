@@ -17,6 +17,9 @@ public class CameraServer_ {
         this.secondaryCamera = CameraServer.getInstance().startAutomaticCapture(1);
     }
 
+    /**
+     * Closes the stream for the cameras
+     */
     public void stop() {
         this.primaryCamera.close();
         this.secondaryCamera.close();
