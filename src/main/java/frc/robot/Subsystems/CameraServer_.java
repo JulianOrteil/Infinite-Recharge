@@ -8,12 +8,17 @@ import edu.wpi.first.cameraserver.CameraServer;
  */
 public class CameraServer_ {
 
-    private static UsbCamera primaryCamera;
-    private static UsbCamera secondaryCamera;
+    private UsbCamera primaryCamera;
+    private UsbCamera secondaryCamera;
 
     public CameraServer_() {
 
         this.primaryCamera = CameraServer.getInstance().startAutomaticCapture(0);
         this.secondaryCamera = CameraServer.getInstance().startAutomaticCapture(1);
+    }
+
+    public void stop() {
+        this.primaryCamera.close();
+        this.secondaryCamera.close();
     }
 }
