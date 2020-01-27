@@ -13,7 +13,7 @@ public class Arduino {
 
     }
 
-    public Double getBallCount() {
-        return 0.0;
+    public int getBallCount() {
+        return 0;
     }
 }
