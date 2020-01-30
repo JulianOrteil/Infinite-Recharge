@@ -146,7 +146,7 @@ public class Robot extends TimedRobot {
         this.robotMap.spinner.set(0.0); // May need to have a non-zero value to maintain position
         this.rumbleStartTime = System.currentTimeMillis();
       }
-    else if (dpadPressed == 180) {
+    } else if (dpadPressed == 180) {
       if (!lowerSwitchSet) {
         this.robotMap.spinner.set(-0.25);
       } else {
