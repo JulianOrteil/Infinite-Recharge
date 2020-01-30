@@ -18,10 +18,11 @@ public class RobotMap {
     private final int FRONT_LEFT_ID, BACK_LEFT_ID, FRONT_RIGHT_ID, BACK_RIGHT_ID;
     private final int INTAKE_ID, DOOR_ID, SPINNER_ID, RACK_AND_PINION_ID;
     private final int RACK_AND_PINION_LOWER_SWITCH_ID, RACK_AND_PINION_READY_SWITCH_ID, RACK_AND_PINION_UPPER_SWITCH_ID;
-    private final int SPINNER_READY_SWITCH_LEFT, SPINNER_READY_SWITCH_RIGHT;
+    private final int SPINNER_READY_SWITCH_LEFT_ID, SPINNER_READY_SWITCH_RIGHT_ID;
+    private final int BALL_SWITCH_ID;
 
     // Motors
-    private WPI_TalonSRX frontLeft, backLeft, frontRight, backRight;
+    public WPI_TalonSRX frontLeft, backLeft, frontRight, backRight;
     public Spark intake, door, spinner, rackAndPinion;
 
     // Chassis and drive trains
@@ -31,6 +32,7 @@ public class RobotMap {
     // Limit switches
     public DigitalInput rackAndPinionLowerSwitch, rackAndPinionUpperSwitch, rackAndPinionReadySwitch;
     public DigitalInput spinnerReadySwitchLeft, spinnerReadySwitchRight;
+    public DigitalInput ballSwitch;
 
     // Arduino
     public Arduino arduino;
@@ -54,8 +56,10 @@ public class RobotMap {
         this.RACK_AND_PINION_READY_SWITCH_ID = 0;
         this.RACK_AND_PINION_UPPER_SWITCH_ID = 0;
 
-        this.SPINNER_READY_SWITCH_LEFT = 0;
-        this.SPINNER_READY_SWITCH_RIGHT = 0;
+        this.SPINNER_READY_SWITCH_LEFT_ID = 0;
+        this.SPINNER_READY_SWITCH_RIGHT_ID = 0;
+
+        this.BALL_SWITCH_ID = 0;
         
         this.frontLeft = new WPI_TalonSRX(this.FRONT_LEFT_ID);
         this.backLeft = new WPI_TalonSRX(this.BACK_LEFT_ID);
@@ -76,8 +80,10 @@ public class RobotMap {
         this.rackAndPinionReadySwitch = new DigitalInput(this.RACK_AND_PINION_READY_SWITCH_ID);
         this.rackAndPinionUpperSwitch = new DigitalInput(this.RACK_AND_PINION_UPPER_SWITCH_ID);
 
-        this.spinnerReadySwitchLeft = new DigitalInput(this.SPINNER_READY_SWITCH_LEFT);
-        this.spinnerReadySwitchRight = new DigitalInput(this.SPINNER_READY_SWITCH_RIGHT);
+        this.spinnerReadySwitchLeft = new DigitalInput(this.SPINNER_READY_SWITCH_LEFT_ID);
+        this.spinnerReadySwitchRight = new DigitalInput(this.SPINNER_READY_SWITCH_RIGHT_ID);
+
+        this.ballSwitch = new DigitalInput(this.BALL_SWITCH_ID);
 
         this.arduino = new Arduino();
 
